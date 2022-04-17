@@ -1,0 +1,1 @@
+Hey folks so this folder is basically a place for us to keep any planning or design notes in here. It'll also be where we house any API documentation.
