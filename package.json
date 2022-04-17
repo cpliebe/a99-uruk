@@ -1,0 +1,34 @@
+{
+  "name": "a99-uruk",
+  "version": "1.0.0",
+  "description": "Final Project for Comp 426. We are creating a Covid-19 Information Dashboard.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-spring/a99-uruk.git"
+  },
+  "keywords": [
+    "server",
+    "api",
+    "documentation",
+    "dashboard",
+    "database",
+    "front-end",
+    "back-end"
+  ],
+  "author": "Connor Hitchings, Max Muoto, Jen Levy, Colin Liebe, Robert Ceglie",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a99-uruk/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a99-uruk#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
