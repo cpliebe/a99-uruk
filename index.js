@@ -5,6 +5,8 @@ const db = require("./src/services/database.js");
 const morgan = require('morgan');
 
 
+// Serve static HTML files
+app.use(express.static('./public'));
 
 const app = express()
 const argv = (minimist)(process.argv.slice(2));
