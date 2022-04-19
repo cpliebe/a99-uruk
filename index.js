@@ -4,7 +4,9 @@ const fs = require('fs');
 const db = require("./src/services/database.js");
 const morgan = require('morgan');
 
-//Connor Made a Branch
+
+// Serve static HTML files
+app.use(express.static('./public'));
 
 const app = express()
 const argv = (minimist)(process.argv.slice(2));
