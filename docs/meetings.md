@@ -20,3 +20,63 @@
     * Store user login info
   * Interaction DB:
     * Figure out later
+
+## 4-19-22 Meeting Notes
+
+**Possible APIs**
+
+
+
+* [HTTP API for COVID Data](https://pipedream.com/@pravin/http-api-for-latest-wuhan-coronavirus-data-2019-ncov-p_G6CLVM/readme)
+    * Provides COVID data for every country, along with COVID data for regions in these countries
+    * Statistics: # of Cases, # of Recoveries, # of Deaths
+* [Covid Tracking Project API](https://covidtracking.com/data/api/version-2)
+    * Provides COVID data for the USA, allows for single day statistics
+    * Might be good to use if we want to focus in on the USA for our dashboard
+    * One we will be using for now
+* [Coronavirus (Covid-19) Data in the United States](https://github.com/nytimes/covid-19-data)
+    * On github so very easy to view
+    * Mainly shows examples of Datasets
+
+**Good Examples of other COVID Dashboards**
+
+
+
+* [https://covid19.ncdhhs.gov/dashboard](https://covid19.ncdhhs.gov/dashboard)
+    * Dashboard for the state of North Carolina
+* [https://public.tableau.com/app/profile/oira.dashboards/viz/CarolinaCOVID-19MonitoringDashboard/COVID19MetricsDashboard](https://public.tableau.com/app/profile/oira.dashboards/viz/CarolinaCOVID-19MonitoringDashboard/COVID19MetricsDashboard)
+
+**Categories**
+
+
+
+* Select by state
+    * Daily case count for x number of days
+* Hospitalizations by country or state
+* Compare state by state, or compare state to national average
+    * Percent difference
+* Vaccination numbers/rate by state
+* Interactive map possibly
+* Search bar or drop down menu
+
+**Next Steps**
+
+
+
+* Use basic HTML/CSS for frontend
+* Use JS/Node for backend
+* Use better-sqllite3 for databases
+* Frontend: Jenna Levy
+    * Jenna will create markup
+* Databases + Login: Maxwell Muoto
+* Backend + Some Frontend (COVID Data Display): Colin Liebe, Connor Hitchings
+* Node.js Backend: Robert Ceglie
+
+Endpoints we will use:
+
+* Login Page
+* Account page
+* US totals page
+* States page
+* Next meeting:
+    * Thursday at 8:00PM
