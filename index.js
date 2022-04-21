@@ -1,7 +1,8 @@
 const express = require('express');
 const minimist = require('minimist');
 const fs = require('fs');
-const db = require("./src/services/database.js");
+const user_db = require("./src/services/user-database.js");
+const interactions_db = require("./src/services/interactions-db.js");
 const morgan = require('morgan');
 
 
