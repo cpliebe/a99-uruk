@@ -24,6 +24,26 @@ const server = app.listen(HTTP_PORT, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%',HTTP_PORT))
 });
 
+// Signup Endpoint
+app.get('/sign-up', (req, res) => {
+    // Pass in account creation info through JSON
+    // Create object to hold account info
+    let user = {
+        email: req.body.email,
+        username : req.body.username,
+        password: req.body.password,
+    }
+
+    // Add account to database
+    const stmt = user_db.prepare("INSERT INTO userLoginInfo (email, password, username) VALUES (?, ?, ?)");
+    const insert = stmt.run(user.email, user.password, user.username);
+});
+
+
+// Signin Endpoint
+app.get('/sign-in', (req, res) => {
+    const select_statement = db.prepare('SELECT * FROM accesslog').all();
+});
 
 
 // Default endpoint request
