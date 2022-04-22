@@ -6,28 +6,31 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <form action="/sign-up" method="POST">
+        <div>
+            <form action="/sign-up" method="POST">
     
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username">
+                </div>
+            
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email">
+                </div>
+                
+                
+                <div>
+                    <label for="pass">Password (8 characters minimum):</label>
+                    <input type="password" id="password" name="password"
+                           minlength="8" required>
+                </div>
+                
+                <input type="submit" value="Create Account">
+                <input type="submit" formaction="/sign-in" value="Sign into Account"> 
         </div>
-    
-        <div>
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email">
-        </div>
-        
-        
-        <div>
-            <label for="pass">Password (8 characters minimum):</label>
-            <input type="password" id="pass" name="password"
-                   minlength="8" required>
-        </div>
-        
-        <input type="submit" value="Create Account">
-        <input type="submit" formaction="/sign-in" value="Sign into Account">
 
-        <button id="nextbtn" onclick="nextPage()">Temporary button to go to next page</button>
+
+        <button id="nextbtn" onclick="nextPage()">Temporary button to go to next page</button> 
     </body>
 </html>
