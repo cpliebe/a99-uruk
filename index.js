@@ -2,14 +2,13 @@ const express = require('express');
 const minimist = require('minimist');
 const fs = require('fs');
 const user_db = require("./src/services/user-database.js");
-const interactions_db = require("./src/services/interactions-db.js");
+const interactions_db = require("./src/services/interactions-database.js");
 const morgan = require('morgan');
-
-
-// Serve static HTML files
-app.use(express.static('./public'));
-
 const app = express()
+
+// Serve login page as start page
+app.use(express.static('./public/login'));
+
 const argv = (minimist)(process.argv.slice(2));
 
 // Set valid arguments
@@ -18,11 +17,29 @@ argv["port"];
 // Get port from argument, if not argument exists set to 5000
 const HTTP_PORT = argv.port || 5000;
 
-
 // Listen on port
 const server = app.listen(HTTP_PORT, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%',HTTP_PORT))
 });
+
+// Endpoints for directory to EXAMPLEPAGE ----------- (should try to put this in a separate folder/file)
+
+// Returns html
+app.get('/examplepage/', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public/examplepage/index.html'));
+})
+
+// Returns css
+app.get('/examplepage/style.css', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public/examplepage/style.css'));
+})
+
+// Returns js
+app.get('/examplepage/script.js', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public/examplepage/script.js'));
+})
+
+// ---------------------------------------------------
 
 // Signup Endpoint
 app.get('/sign-up', (req, res) => {
