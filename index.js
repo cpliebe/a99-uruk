@@ -22,6 +22,25 @@ const server = app.listen(HTTP_PORT, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%',HTTP_PORT))
 });
 
+// Endpoints for directory to EXAMPLEPAGE ----------- (should try to put this in a separate folder/file)
+
+// Returns html
+app.get('/examplepage/', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public/examplepage/index.html'));
+})
+
+// Returns css
+app.get('/examplepage/style.css', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public/examplepage/style.css'));
+})
+
+// Returns js
+app.get('/examplepage/script.js', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public/examplepage/script.js'));
+})
+
+// ---------------------------------------------------
+
 // Signup Endpoint
 app.get('/sign-up', (req, res) => {
     // Pass in account creation info through JSON
