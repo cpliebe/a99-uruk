@@ -13,11 +13,18 @@ router.route('/sign-up').post(function (req, res, next) {
         password: req.body.password,
     }
 
-    // Add account to database
-    const stmt = user_db.prepare("INSERT INTO userLoginInfo (email, password, username) VALUES (?, ?, ?)");
-    const insert = stmt.run(user.email, user.password, user.username);
-    console.log(user);
-    res.status(200).send("Account created"); // Shouldn't this be 200? It was 404 and I changed it -Robert
+    // Check if email is already in DB
+    let stmt = user_db.prepare("SELECT * FROM userLoginInfo WHERE email = ?");
+    let insert = stmt.get(user.email);
+    console.log(insert);
+
+    if (typeof insert == "undefined") {
+        stmt = user_db.prepare("INSERT INTO userLoginInfo (email, password, username) VALUES (?, ?, ?)");
+        insert = stmt.run(user.email, user.password, user.username);
+        res.status(200).send("Account created");
+    } else {
+        res.status(404).send("Account already exists");
+    }
 });
 
 // Sign in Endpoint
