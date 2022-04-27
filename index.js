@@ -29,8 +29,9 @@ const server = app.listen(HTTP_PORT, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%',HTTP_PORT))
 });
 
-// EXAMPLEPAGE route
+// EXAMPLEPAGE + coviddata routes
 app.use(require("./src/routes/examplepage.route"))
+app.use(require("./src/routes/coviddata.route"))
 
 // Signup & signin endpoints route
 app.use(require("./src/routes/login.route"))
