@@ -53,7 +53,43 @@ function fetchData() {
         document.getElementById("seven_day_average_deaths").innerHTML = result.data[0].outcomes.hospitalized.on_ventilator.currently.calculated.seven_day_average;
 
 
-        let labels1 = ["Cases", , "US Population"];
+         // Chart One
+        let hospitalized = result.data[0].outcomes.hospitalized.currently.value;
+        let icu = result.data[0].outcomes.hospitalized.in_icu.currently.value;
+        let vent = result.data[0].outcomes.hospitalized.on_ventilator.currently.value;
+        let dead = result.data[0].outcomes.death.total.calculated.change_from_prior_day;
+
+         let labels1 = ["Hospitalized", "In ICU", "On Ventilator", "Deaths"];
+        let data1 = [hospitalized, icu, vent, dead];
+
+         let colors1 = ['#0000FF', '#7FFF00', '#FF7F50', '#6495ED',];
+ 
+         let myChart1 = document.getElementById("myChart").getContext('2d');
+         let chart1 = new Chart(myChart1, {
+             type: 'bar',
+             data: {
+                 labels: labels1, 
+                 datasets: [ {
+                     data: data1, 
+                     backgroundColor: colors1
+                 }]
+             },
+             options: {
+                 title: {
+                     text: "CURRENT SEVERITY CHART",
+                     display: true
+                 },
+                 legend: {
+                     display: false
+                 }
+             }
+         });
+        
+}
+    )}
+         /*
+        // Chart One
+        let labels1 = ["Positive Cases %", "Uninfected US Population %"];
         let data1 = [result.data[0].cases.total.calculated.population_percent, 100 - result.data[0].cases.total.calculated.population_percent];
         let colors1 = ['#49A9EA', '#36CAAB'];
 
@@ -69,12 +105,14 @@ function fetchData() {
             },
             options: {
                 title: {
-                    text: "US COVID DATA",
+                    text: "US HISTORIC COVID DATA",
                     display: true
                 }
             }
         });
 
+
     })
     
 }
+*/
